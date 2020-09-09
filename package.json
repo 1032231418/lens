@@ -71,7 +71,8 @@
     },
     "moduleNameMapper": {
       "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.ts"
-    }
+    },
+    "modulePathIgnorePatterns": ["<rootDir>/dist"]
   },
   "build": {
     "afterSign": "build/notarize.js",
@@ -90,6 +91,11 @@
         "from": "static/",
         "to": "static/",
         "filter": "!**/main.js"
+      },
+      {
+        "from": "src/extensions/",
+        "to": "./extensions/",
+        "filter": "**/*.js*"
       },
       "LICENSE"
     ],
